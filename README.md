@@ -1,20 +1,25 @@
-<h1 align="left">🤖Hello,</h1>
+<h1 align="left">🤖Hello</h1>
 
+###
 
-<h2 align="left">I am Ashwin👨🏽‍💻,<br>Computer Science undergraduate from India.<br></h2>
+<h2 align="left">I am Ashwin👨🏽‍💻,<br>Computer Science undergraduate from India.</h2>
 
+###
 
+<img align="right" height="500" src="https://i.pinimg.com/736x/89/e2/df/89e2df2142c7bb2d195caed59cd7fda8.jpg"  />
 
-<img align="right" height="350" src="https://i.pinimg.com/736x/89/e2/df/89e2df2142c7bb2d195caed59cd7fda8.jpg"  />
-
-
-
-
+###
 
 <p align="left">🌌 Aspiring AI Developer | Quantum Computing | Physics & Math Enthusiast<br>💻 Building basic ANNs, Compiler and modified Linux kernel.<br>🌱 Currently exploring Ai and math behind it.<br>🌟 Passionate about Economics, AI, Hardware modding, Scientific computing, and open-source projects.<br><br>🔗 My Website: https://ashwinr.me/</p>
 
 ###
-## my tech stack:
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=ashwin-r11&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=chartreuse-dark&locale=en&hide_border=false&order=1" height="200" alt="stats graph"  />
+</div>
+
+###
+
 <div align="left">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" height="40" alt="linux logo"  />
   <img width="12" />
@@ -55,16 +60,6 @@
 
 <div align="right">
   <img src="https://profile-counter.glitch.me/ashwin-r11/count.svg?"  />
-</div>
-
-###
-
-<br clear="both">
-
-<div align="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=ashwin-r11&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=chartreuse-dark&locale=en&hide_border=false&order=1" height="150" alt="stats graph"  />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=ashwin-r11&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=chartreuse-dark&hide_border=false&order=2" height="137" alt="languages graph"  />
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ashwin-r11&radius=16&theme=chartreuse-dark&area=true&order=5" height="300" alt="activity-graph graph"  />
 </div>
 
 ###
