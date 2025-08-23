@@ -1,32 +1,31 @@
-name: Profile README Updater
+name: README build
 
 on:
+  push:
+    branches:
+      - main
   schedule:
-    - cron: "0 4 * * *"   # every day at 04:00 UTC
-  workflow_dispatch:      # manual trigger
-
-permissions:
-  contents: write
+    - cron: "0 4 * * *"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout profile repo
-        uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v2
         with:
-          repository: ashwin-r11/ashwin-r11   # 👈 force profile repo
-          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 1
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
         with:
           python-version: '3.8'
 
       - name: Install dependencies
         run: |
-          pip install python-dateutil requests lxml
+          pip install python-dateutil
+          pip install requests
+          pip install lxml
 
       - name: Update README file
         env:
@@ -34,10 +33,12 @@ jobs:
           USER_NAME: ${{ secrets.USER_NAME }}
         run: python today.py
 
-      - name: Commit and Push changes
+      - name: Commit and Force Push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
           git commit -m "Automated README update" || echo "No changes to commit"
-          git push
+          git push origin main --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
