@@ -28,11 +28,12 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           USER_NAME: ${{ secrets.USER_NAME }}
         run: python today.py
-      - name: Commit
-        run: |-
-          git add .
-          git diff
-          git config --global user.email "github-actions-bot@ashwin-r11.github.io"
-          git config --global user.name "ashwin-r11/GitHub-Actions-Bot"
-          git commit -m "Updated README" -a || echo "No changes to commit"
-          git push
+      - name: Commit and Push
+             run: |
+              git config user.name "github-actions[bot]"
+              git config user.email "github-actions[bot]@users.noreply.github.com"
+              git add .
+              git commit -m "Updated README" -a || echo "No changes to commit"
+              git push
+            env:
+               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
