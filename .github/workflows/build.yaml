@@ -38,10 +38,14 @@ jobs:
       - name: Commit and Push changes
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add .
           git commit -m "Automated README update" || echo "No changes to commit"
-          git pull --rebase origin main || true   # ✅ fix rejected push
+
+          # ✅ Rebase before pushing to avoid non-fast-forward errors
+          git pull --rebase origin main || echo "No rebase needed"
+
           git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
