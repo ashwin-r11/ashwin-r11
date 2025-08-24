@@ -17,7 +17,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0   # ✅ full history needed for pull/rebase
+          fetch-depth: 0   # ✅ full history for rebase
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python 3.8
@@ -30,10 +30,9 @@ jobs:
           pip install python-dateutil requests lxml
 
       - name: Update README file
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          USER_NAME: ${{ secrets.USER_NAME }}
         run: python today.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit and Push changes
         run: |
@@ -43,9 +42,9 @@ jobs:
           git add .
           git commit -m "Automated README update" || echo "No changes to commit"
 
-          # ✅ Rebase before pushing to avoid non-fast-forward errors
-          git pull --rebase origin main || echo "No rebase needed"
+          # ✅ Rebase on latest main, skip conflicts if any
+          git fetch origin main
+          git rebase origin/main || git rebase --skip
 
-          git push origin main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # ✅ Force push after rebase to avoid non-fast-forward errors
+          git push origin main --force
