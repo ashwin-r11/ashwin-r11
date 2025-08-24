@@ -32,7 +32,8 @@ jobs:
       - name: Update README file
         run: python today.py
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
       - name: Commit and Push changes
         run: |
