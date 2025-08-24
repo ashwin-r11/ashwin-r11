@@ -33,7 +33,7 @@ jobs:
         run: python today.py
         env:
           ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+          USER_NAME: ${{ secrets.USER_NAME }}   # ✅ add USER_NAME secret in repo settings
 
       - name: Commit and Push changes
         run: |
