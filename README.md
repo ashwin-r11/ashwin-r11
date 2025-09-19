@@ -7,5 +7,5 @@
   </picture>
 </a>
 
-#### ..............................................................................................................................I craft code, decode systems, and map the unknown.
+<h3><p align="right">I craft code, decode systems, and map the unknown. </p></h3>
 
